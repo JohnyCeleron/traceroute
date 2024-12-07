@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 from argparse import Namespace
 
-from src.protocol import Protocol
+from src.enums import Protocol
 from src.utils import convert_to_enum
 
 
