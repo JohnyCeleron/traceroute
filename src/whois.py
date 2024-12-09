@@ -33,7 +33,6 @@ def _query_whois(ip_address: str, rir_server: str): #TODO IPv6
 
 def _get_rir_whois_server(ip_address):
     iana_response = _query_whois(ip_address, "whois.iana.org")
-    print(iana_response)
     if iana_response is not None:
         for line in iana_response.splitlines():
             if line.lower().startswith("refer:") and line.lower().startswith("whois:"): #TODO: прочитать про эту метку

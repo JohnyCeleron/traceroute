@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from ipaddress import ip_address
+
 from src.request_builder import TracerouteRequest
 
 @dataclass
@@ -19,6 +21,8 @@ class TracerouteResponse:
 
     @classmethod
     def from_request(cls, request: TracerouteRequest):
+        ip_address = request.ip_address
+
         pass # TODO: вот тут уже начинается логика
 
     def __str__(self) -> str:
