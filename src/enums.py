@@ -1,9 +1,9 @@
 from enum import StrEnum
 
 
-class Protocol(StrEnum):
+class ProtocolType(StrEnum):
     TCP = 'TCP',
-    UDP = 'UDP'
+    UDP = 'UDP',
     ICMP = 'ICMP'
 
 

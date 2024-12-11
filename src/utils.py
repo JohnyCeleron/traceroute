@@ -1,14 +1,14 @@
-from src.enums import Protocol, IPVersion
+from src.enums import ProtocolType, IPVersion
 import re
 
 
-def convert_to_enum(arg_protocol: str) -> Protocol:
+def convert_to_enum(arg_protocol: str) -> ProtocolType:
     if arg_protocol == 'tcp':
-        return Protocol.TCP
+        return ProtocolType.TCP
     if arg_protocol == 'udp':
-        return Protocol.UDP
+        return ProtocolType.UDP
     if arg_protocol == 'icmp':
-        return Protocol.ICMP
+        return ProtocolType.ICMP
 
 
 def _check_hex(s: str):
@@ -32,7 +32,7 @@ def _check_ipv4(ip_address: str) -> bool:
 def _check_ipv6(ip_address: str) -> bool:
     if ':::' in ip_address: # ipv6 адрес не может иметь 3 двоеточия подряд
         return False
-    tokens = ip_address.split('.')
+    tokens = ip_address.split(':')
     if len(tokens) > 8:
         return False
     for token in tokens:
